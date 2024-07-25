@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qlesuyxn7rad"]
+[gd_scene load_steps=7 format=3 uid="uid://qlesuyxn7rad"]
 
 [ext_resource type="Texture2D" uid="uid://dcl1vebfnibys" path="res://textures/BG_DesertMountains/background1.png" id="1_b2y0t"]
 [ext_resource type="Texture2D" uid="uid://blhfctav4g6wk" path="res://textures/BG_DesertMountains/background2.png" id="2_6yk77"]
@@ -6,17 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://drptyu0itwy4d" path="res://textures/Bird_v001_blue_and_yellow.png" id="4_ig36g"]
 [ext_resource type="Script" path="res://src/player_controller.gd" id="5_dd8ld"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vvpc"]
+size = Vector2(44, 13)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 1)
+motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(0, 320)
 texture = ExtResource("1_b2y0t")
+region_rect = Rect2(0, 0, 528, 256)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(640, 320)
@@ -62,13 +66,17 @@ texture = ExtResource("3_a5q2x")
 script = ExtResource("5_dd8ld")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(579, 277)
+position = Vector2(0, 300)
 texture = ExtResource("4_ig36g")
 region_enabled = true
 region_rect = Rect2(384, 160, 48, 32)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(580, 271)
+position = Vector2(0, 300)
 zoom = Vector2(1.02, 1.02)
 limit_top = 0
 limit_bottom = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1, 300.5)
+shape = SubResource("RectangleShape2D_0vvpc")

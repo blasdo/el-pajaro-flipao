@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://bthm2ttv7dso4"]
+
+[ext_resource type="Texture2D" uid="uid://drptyu0itwy4d" path="res://textures/Bird_v001_blue_and_yellow.png" id="1_ur8ge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knh0e"]
+size = Vector2(44.5, 324)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(178, 484.077)
+rotation = -3.14159
+scale = Vector2(1, -20.7264)
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(598, -23.3578)
+rotation = 3.14159
+scale = Vector2(1, -0.0482475)
+gravity_scale = 0.0
+
+[node name="Enemy" type="Sprite2D" parent="RigidBody2D3"]
+position = Vector2(1170, 464)
+scale = Vector2(1, -20.7264)
+texture = ExtResource("1_ur8ge")
+region_enabled = true
+region_rect = Rect2(289, 166, 48, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(1170, 468.984)
+shape = SubResource("RectangleShape2D_knh0e")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(598, -23.3578)
+rotation = 3.14159
+scale = Vector2(1, -0.0482475)
+gravity_scale = 0.0
+
+[node name="Enemy" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(867, 149)
+scale = Vector2(1, -20.7264)
+texture = ExtResource("1_ur8ge")
+region_enabled = true
+region_rect = Rect2(289, 166, 48, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(870.999, 153)
+shape = SubResource("RectangleShape2D_knh0e")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(6.10352e-05, -8.73877)
+scale = Vector2(1, -0.0482475)
+gravity_scale = 0.0
+
+[node name="Enemy" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -181.124)
+scale = Vector2(1, -20.7264)
+texture = ExtResource("1_ur8ge")
+region_enabled = true
+region_rect = Rect2(289, 166, 48, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.249756, -168)
+shape = SubResource("RectangleShape2D_knh0e")
